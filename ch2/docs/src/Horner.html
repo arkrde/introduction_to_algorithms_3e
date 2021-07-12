@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{-|
+Module      : Horner
+Description : CLRS - 2.3 - &quot;Horner's rule&quot; the evaluation of a polynomial
+Copyright   : (c) Arnab De, 2021
+                  Debomita Saha De, 2021
+License     : GPL-3
+Maintainer  : arkrde@email.com
+Stability   : experimental
+Portability : POSIX
+@&quot;&quot;@
+-}</span><span>
+</span><span id="line-12"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Horner</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Horner.html#horner"><span class="hs-identifier">horner</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-13"></span><span class="hs-comment">-- | Function to implement &quot;Horner's rule&quot; to evaluate a polynomial</span><span>
+</span><span id="line-14"></span><span id="local-6989586621679025440"><span class="annot"><a href="Horner.html#horner"><span class="hs-identifier hs-type">horner</span></a></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Num</span></span><span> </span><span class="annot"><a href="#local-6989586621679025440"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span>
+</span><span id="line-15"></span><span>        </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679025440"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-comment">--  ^ The free variable</span><span>
+</span><span id="line-16"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679025440"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-comment">-- ^ The list of coefficients</span><span>
+</span><span id="line-17"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679025440"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-comment">-- ^ The output</span></span><span>
+</span><span id="line-18"></span><span id="horner"><span class="annot"><span class="annottext">horner :: a -&gt; [a] -&gt; a
+</span><a href="Horner.html#horner"><span class="hs-identifier hs-var hs-var">horner</span></a></span></span><span> </span><span id="local-6989586621679025438"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025438"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a
+</span><span class="hs-number">0</span></span><span>
+</span><span id="line-19"></span><span class="annot"><a href="Horner.html#horner"><span class="hs-identifier hs-var">horner</span></a></span><span> </span><span id="local-6989586621679025437"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025437"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679025436"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025436"><span class="hs-identifier hs-var">x</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679025435"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679025435"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025436"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
+forall a. Num a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025437"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
+forall a. Num a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; [a] -&gt; a
+forall a. Num a =&gt; a -&gt; [a] -&gt; a
+</span><a href="Horner.html#horner"><span class="hs-identifier hs-var">horner</span></a></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025437"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679025435"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><span id="line-20"></span></pre></body></html>
