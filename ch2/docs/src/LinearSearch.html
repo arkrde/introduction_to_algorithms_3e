@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{-|
+Module      : LinearSearch
+Description : CLRS - 2.1.3 - Linear Search
+Copyright   : (c) Arnab De, 2021
+                  Debomita Saha De, 2021
+License     : GPL-3
+Maintainer  : arkrde@email.com
+Stability   : experimental
+Portability : POSIX
+@&quot;&quot;@
+-}</span><span>
+</span><span id="line-12"></span><span>
+</span><span id="line-13"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">LinearSearch</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="LinearSearch.html#linearSearch"><span class="hs-identifier">linearSearch</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-14"></span><span>
+</span><span id="line-15"></span><span id="local-6989586621679025490"><span class="annot"><a href="LinearSearch.html#isIn"><span class="hs-identifier hs-type">isIn</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="annot"><a href="#local-6989586621679025490"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679025490"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679025490"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span></span><span>
+</span><span id="line-16"></span><span id="isIn"><span class="annot"><span class="annottext">isIn :: a -&gt; [a] -&gt; Bool
+</span><a href="LinearSearch.html#isIn"><span class="hs-identifier hs-var hs-var">isIn</span></a></span></span><span> </span><span id="local-6989586621679025482"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025482"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier hs-var">False</span></span><span>
+</span><span id="line-17"></span><span class="annot"><a href="LinearSearch.html#isIn"><span class="hs-identifier hs-var">isIn</span></a></span><span> </span><span id="local-6989586621679025481"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025481"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">[</span><span id="local-6989586621679025480"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025480"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025481"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; Bool
+forall a. Eq a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025480"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-18"></span><span class="annot"><a href="LinearSearch.html#isIn"><span class="hs-identifier hs-var">isIn</span></a></span><span> </span><span id="local-6989586621679025479"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025479"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679025478"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025478"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679025477"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679025477"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025479"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; Bool
+forall a. Eq a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025478"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; [a] -&gt; Bool
+forall a. Eq a =&gt; a -&gt; [a] -&gt; Bool
+</span><a href="LinearSearch.html#isIn"><span class="hs-identifier hs-var">isIn</span></a></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025479"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679025477"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><span id="line-19"></span><span>
+</span><span id="line-20"></span><span class="hs-comment">-- | Function to execute &quot;linear search&quot; for an element in a list</span><span>
+</span><span id="line-21"></span><span id="local-6989586621679025475"><span class="annot"><a href="LinearSearch.html#linearSearch"><span class="hs-identifier hs-type">linearSearch</span></a></span><span>    </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="annot"><a href="#local-6989586621679025475"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span>
+</span><span id="line-22"></span><span>                </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679025475"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-comment">-- ^ The element to search </span><span>
+</span><span id="line-23"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679025475"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-comment">-- ^ The list in which the search is carried out</span><span>
+</span><span id="line-24"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-comment">-- ^ Returns the index of the element if present or -1</span></span><span>
+</span><span id="line-25"></span><span id="linearSearch"><span class="annot"><span class="annottext">linearSearch :: a -&gt; [a] -&gt; Int
+</span><a href="LinearSearch.html#linearSearch"><span class="hs-identifier hs-var hs-var">linearSearch</span></a></span></span><span> </span><span id="local-6989586621679025474"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025474"><span class="hs-identifier hs-var">val</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">-</span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">1</span></span><span>
+</span><span id="line-26"></span><span class="annot"><a href="LinearSearch.html#linearSearch"><span class="hs-identifier hs-var">linearSearch</span></a></span><span> </span><span id="local-6989586621679025473"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025473"><span class="hs-identifier hs-var">val</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679025472"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025472"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679025471"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679025471"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; a -&gt; [a] -&gt; Int
+forall a. Eq a =&gt; Int -&gt; a -&gt; [a] -&gt; Int
+</span><a href="LinearSearch.html#searchValue"><span class="hs-identifier hs-var">searchValue</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">0</span></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025473"><span class="hs-identifier hs-var">val</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025472"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; [a] -&gt; [a]
+forall a. a -&gt; [a] -&gt; [a]
+</span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679025471"><span class="hs-identifier hs-var">xs</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-27"></span><span>
+</span><span id="line-28"></span><span class="hs-comment">-- | Helper function to search for the index of a value in a list.</span><span>
+</span><span id="line-29"></span><span class="hs-comment">-- Returns the index of the value if it's found, else return -1</span><span>
+</span><span id="line-30"></span><span id="local-6989586621679025488"><span class="annot"><a href="LinearSearch.html#searchValue"><span class="hs-identifier hs-type">searchValue</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="annot"><a href="#local-6989586621679025488"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679025488"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679025488"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span></span><span>
+</span><span id="line-31"></span><span id="searchValue"><span class="annot"><span class="annottext">searchValue :: Int -&gt; a -&gt; [a] -&gt; Int
+</span><a href="LinearSearch.html#searchValue"><span class="hs-identifier hs-var hs-var">searchValue</span></a></span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">a
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">-</span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">1</span></span><span>
+</span><span id="line-32"></span><span class="annot"><a href="LinearSearch.html#searchValue"><span class="hs-identifier hs-var">searchValue</span></a></span><span> </span><span id="local-6989586621679025469"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679025469"><span class="hs-identifier hs-var">idx</span></a></span></span><span> </span><span id="local-6989586621679025468"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025468"><span class="hs-identifier hs-var">val</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679025467"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025467"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679025466"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679025466"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span>
+</span><span id="line-33"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025468"><span class="hs-identifier hs-var">val</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; Bool
+forall a. Eq a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025467"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679025469"><span class="hs-identifier hs-var">idx</span></a></span><span>
+</span><span id="line-34"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; a -&gt; [a] -&gt; Int
+forall a. Eq a =&gt; Int -&gt; a -&gt; [a] -&gt; Int
+</span><a href="LinearSearch.html#searchValue"><span class="hs-identifier hs-var">searchValue</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679025469"><span class="hs-identifier hs-var">idx</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+forall a. Num a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">1</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679025468"><span class="hs-identifier hs-var">val</span></a></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679025466"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><span id="line-35"></span></pre></body></html>
