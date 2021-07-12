@@ -1,1 +1,1 @@
-[ch2](./ch2/docs/index.html)
+- [ch2](./ch2/)
