@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 053f48728cb99201dce245bf4b16d57eb356501cca9eb4f2032dec370c0d39d2
+-- hash: 43391797256adc9e857381e04ea23a7ea160ea5f13bfbeeef9b93e3307033344
 
 name:           ch2
 version:        0.1.0.0
@@ -33,7 +33,6 @@ library
       FindParts
       Horner
       InsertionSort
-      Lib
       LinearSearch
       MergeSort
       SelectionSort

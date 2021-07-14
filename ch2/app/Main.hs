@@ -1,6 +1,5 @@
 module Main where
 
-import Lib
 
 main :: IO ()
-main = someFunc
+main = putStrLn "This is chapter-2 of CLRS"
