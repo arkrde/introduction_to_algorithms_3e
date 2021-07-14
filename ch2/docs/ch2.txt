@@ -69,9 +69,6 @@ module InsertionSort
 --   the sorted list while keeping the original list intact
 insertionSort :: (Eq a, Ord a) => [a] -> [a]
 
-module Lib
-someFunc :: IO ()
-
 
 -- | <pre>
 --   ""
