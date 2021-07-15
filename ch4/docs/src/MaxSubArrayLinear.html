@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{-|
+Module      : MaxSubArrayLinear
+Description : CLRS - 4.1.5 - The Maximum-subarray Problem
+Copyright   : (c) Arnab De, 2021
+                  Debomita Saha De, 2021
+License     : GPL-3
+Maintainer  : arkrde@email.com
+Stability   : experimental
+Portability : POSIX
+@&quot;A linear-time algorithm&quot;@
+-}</span><span>
+</span><span id="line-12"></span><span>
+</span><span id="line-13"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">MaxSubArrayLinear</span><span> </span><span class="hs-special">(</span><span>
+</span><span id="line-14"></span><span>    </span><span class="annot"><a href="MaxSubArrayLinear.html#maxSubarray"><span class="hs-identifier">maxSubarray</span></a></span><span>
+</span><span id="line-15"></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-16"></span><span>
+</span><span id="line-17"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.List</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">List</span></span><span>
+</span><span id="line-18"></span><span>
+</span><span id="line-19"></span><span>
+</span><span id="line-20"></span><span class="hs-comment">-- | Function to calculate maximum subarray using an O(n) alorithm</span><span>
+</span><span id="line-21"></span><span class="annot"><a href="MaxSubArrayLinear.html#maxSubarray"><span class="hs-identifier hs-type">maxSubarray</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">]</span><span>
+</span><span id="line-22"></span><span id="maxSubarray"><span class="annot"><span class="annottext">maxSubarray :: [Int] -&gt; [Int]
+</span><a href="MaxSubArrayLinear.html#maxSubarray"><span class="hs-identifier hs-var hs-var">maxSubarray</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><span id="line-23"></span><span class="annot"><a href="MaxSubArrayLinear.html#maxSubarray"><span class="hs-identifier hs-var">maxSubarray</span></a></span><span> </span><span class="hs-special">[</span><span id="local-6989586621679024128"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679024128"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679024128"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-24"></span><span class="annot"><a href="MaxSubArrayLinear.html#maxSubarray"><span class="hs-identifier hs-var">maxSubarray</span></a></span><span> </span><span id="local-6989586621679024127"><span class="annot"><span class="annottext">seq :: [Int]
+</span><a href="#local-6989586621679024127"><span class="hs-identifier hs-var">seq</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span id="local-6989586621679024126"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679024126"><span class="hs-identifier hs-var">x</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679024125"><span class="annot"><span class="annottext">[Int]
+</span><a href="#local-6989586621679024125"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span>
+</span><span id="line-25"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679024126"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+forall a. Ord a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Int] -&gt; [Int]
+</span><a href="MaxSubArrayLinear.html#maxSubarray"><span class="hs-identifier hs-var">maxSubarray</span></a></span><span> </span><span class="annot"><span class="annottext">[Int]
+</span><a href="#local-6989586621679024125"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><span id="line-26"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Int] -&gt; [Int]
+forall a. (Num a, Ord a) =&gt; [a] -&gt; [a]
+</span><a href="MaxSubArrayLinear.html#findMaxSumSubarray"><span class="hs-identifier hs-var">findMaxSumSubarray</span></a></span><span> </span><span class="annot"><span class="annottext">([Int] -&gt; [Int]) -&gt; [Int] -&gt; [Int]
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[Int] -&gt; [Int]
+forall a. (Num a, Ord a) =&gt; [a] -&gt; [a]
+</span><a href="MaxSubArrayLinear.html#removeNegativeSumSequenceFromLeft"><span class="hs-identifier hs-var">removeNegativeSumSequenceFromLeft</span></a></span><span> </span><span class="annot"><span class="annottext">[Int]
+</span><a href="#local-6989586621679024127"><span class="hs-identifier hs-var">seq</span></a></span><span>
+</span><span id="line-27"></span><span>
+</span><span id="line-28"></span><span class="hs-comment">-- | Function that removes leading negative subsequences in a list</span><span>
+</span><span id="line-29"></span><span id="local-6989586621679024121"><span class="annot"><a href="MaxSubArrayLinear.html#removeNegativeSumSequenceFromLeft"><span class="hs-identifier hs-type">removeNegativeSumSequenceFromLeft</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Num</span></span><span> </span><span class="annot"><a href="#local-6989586621679024121"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ord</span></span><span> </span><span class="annot"><a href="#local-6989586621679024121"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679024121"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679024121"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span></span><span>
+</span><span id="line-30"></span><span id="removeNegativeSumSequenceFromLeft"><span class="annot"><span class="annottext">removeNegativeSumSequenceFromLeft :: [a] -&gt; [a]
+</span><a href="MaxSubArrayLinear.html#removeNegativeSumSequenceFromLeft"><span class="hs-identifier hs-var hs-var">removeNegativeSumSequenceFromLeft</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><span id="line-31"></span><span class="annot"><a href="MaxSubArrayLinear.html#removeNegativeSumSequenceFromLeft"><span class="hs-identifier hs-var">removeNegativeSumSequenceFromLeft</span></a></span><span> </span><span class="hs-special">[</span><span id="local-6989586621679024120"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679024120"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679024120"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; Bool
+forall a. Ord a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">a
+</span><span class="hs-number">0</span></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-keyword">else</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679024120"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-32"></span><span class="annot"><a href="MaxSubArrayLinear.html#removeNegativeSumSequenceFromLeft"><span class="hs-identifier hs-var">removeNegativeSumSequenceFromLeft</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679024119"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024119"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-33"></span><span>    </span><span class="annot"><span class="annottext">[a] -&gt; [a]
+forall a. [a] -&gt; [a]
+</span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span>
+</span><span id="line-34"></span><span>    </span><span class="annot"><span class="annottext">([a] -&gt; [a]) -&gt; [a] -&gt; [a]
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">(a -&gt; [a] -&gt; [a]) -&gt; [a] -&gt; [a] -&gt; [a]
+forall (t :: * -&gt; *) a b.
+Foldable t =&gt;
+(a -&gt; b -&gt; b) -&gt; b -&gt; t a -&gt; b
+</span><span class="hs-identifier hs-var">foldr</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679024116"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679024116"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679024115"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024115"><span class="hs-identifier hs-var">acc</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">[a] -&gt; a
+forall (t :: * -&gt; *) a. (Foldable t, Num a) =&gt; t a -&gt; a
+</span><span class="hs-identifier hs-var">sum</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679024116"><span class="hs-identifier hs-var">x</span></a></span><span class="annot"><span class="annottext">a -&gt; [a] -&gt; [a]
+forall a. a -&gt; [a] -&gt; [a]
+</span><span class="hs-glyph hs-var">:</span></span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024115"><span class="hs-identifier hs-var">acc</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; Bool
+forall a. Ord a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">a
+</span><span class="hs-number">0</span></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679024116"><span class="hs-identifier hs-var">x</span></a></span><span class="annot"><span class="annottext">a -&gt; [a] -&gt; [a]
+forall a. a -&gt; [a] -&gt; [a]
+</span><span class="hs-glyph hs-var">:</span></span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024115"><span class="hs-identifier hs-var">acc</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span>
+</span><span id="line-35"></span><span>    </span><span class="annot"><span class="annottext">([a] -&gt; [a]) -&gt; [a] -&gt; [a]
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[a] -&gt; [a]
+forall a. [a] -&gt; [a]
+</span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024119"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><span id="line-36"></span><span>
+</span><span id="line-37"></span><span>
+</span><span id="line-38"></span><span class="hs-comment">-- | Function to find subarray with the maximum sum in a subarray without any</span><span>
+</span><span id="line-39"></span><span class="hs-comment">-- negative leading subsequence</span><span>
+</span><span id="line-40"></span><span id="local-6989586621679024145"><span class="annot"><a href="MaxSubArrayLinear.html#findMaxSumSubarray"><span class="hs-identifier hs-type">findMaxSumSubarray</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Num</span></span><span> </span><span class="annot"><a href="#local-6989586621679024145"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ord</span></span><span> </span><span class="annot"><a href="#local-6989586621679024145"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679024145"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679024145"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span></span><span>
+</span><span id="line-41"></span><span id="findMaxSumSubarray"><span class="annot"><span class="annottext">findMaxSumSubarray :: [a] -&gt; [a]
+</span><a href="MaxSubArrayLinear.html#findMaxSumSubarray"><span class="hs-identifier hs-var hs-var">findMaxSumSubarray</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><span id="line-42"></span><span class="annot"><a href="MaxSubArrayLinear.html#findMaxSumSubarray"><span class="hs-identifier hs-var">findMaxSumSubarray</span></a></span><span> </span><span class="hs-special">[</span><span id="local-6989586621679024113"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679024113"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679024113"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-43"></span><span class="annot"><a href="MaxSubArrayLinear.html#findMaxSumSubarray"><span class="hs-identifier hs-var">findMaxSumSubarray</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679024112"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024112"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-44"></span><span>    </span><span class="annot"><span class="annottext">([a] -&gt; [a] -&gt; [a]) -&gt; [[a]] -&gt; [a]
+forall (t :: * -&gt; *) a. Foldable t =&gt; (a -&gt; a -&gt; a) -&gt; t a -&gt; a
+</span><span class="hs-identifier hs-var">foldl1</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679024110"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024110"><span class="hs-identifier hs-var">acc</span></a></span></span><span> </span><span id="local-6989586621679024109"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024109"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">[a] -&gt; a
+forall (t :: * -&gt; *) a. (Foldable t, Num a) =&gt; t a -&gt; a
+</span><span class="hs-identifier hs-var">sum</span></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024109"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; Bool
+forall a. Ord a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">&gt;</span></span><span> </span><span class="annot"><span class="annottext">[a] -&gt; a
+forall (t :: * -&gt; *) a. (Foldable t, Num a) =&gt; t a -&gt; a
+</span><span class="hs-identifier hs-var">sum</span></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024110"><span class="hs-identifier hs-var">acc</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024109"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024110"><span class="hs-identifier hs-var">acc</span></a></span><span class="hs-special">)</span><span> </span><span>
+</span><span id="line-45"></span><span>    </span><span class="annot"><span class="annottext">([[a]] -&gt; [a]) -&gt; [[a]] -&gt; [a]
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">([a] -&gt; [a]) -&gt; [[a]] -&gt; [[a]]
+forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
+</span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">[a] -&gt; [a]
+forall a. [a] -&gt; [a]
+</span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span>
+</span><span id="line-46"></span><span>    </span><span class="annot"><span class="annottext">([[a]] -&gt; [[a]]) -&gt; [[a]] -&gt; [[a]]
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">(a -&gt; [a] -&gt; [a]) -&gt; [a] -&gt; [a] -&gt; [[a]]
+forall a b. (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; [b]
+</span><span class="hs-identifier hs-var">scanr</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">:</span><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span>
+</span><span id="line-47"></span><span>    </span><span class="annot"><span class="annottext">([a] -&gt; [[a]]) -&gt; [a] -&gt; [[a]]
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[a] -&gt; [a]
+forall a. [a] -&gt; [a]
+</span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679024112"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><span id="line-48"></span><span>
+</span><span id="line-49"></span></pre></body></html>
