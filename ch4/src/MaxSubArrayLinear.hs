@@ -25,7 +25,8 @@ maxSubarray seq@(x:xs)
     | x < 0 = maxSubarray xs
     | otherwise = findMaxSumSubarray $ removeNegativeSumSequenceFromLeft seq
 
--- | Function that removes leading negative subsequences in a list
+
+-- | Function that removes leading subsequences in a list with a negative sum
 removeNegativeSumSequenceFromLeft :: (Num a, Ord a) => [a] -> [a]
 removeNegativeSumSequenceFromLeft [] = []
 removeNegativeSumSequenceFromLeft [x] = if x < 0 then [] else [x]
@@ -35,8 +36,8 @@ removeNegativeSumSequenceFromLeft (xs) =
     $ reverse xs
 
 
--- | Function to find subarray with the maximum sum in a subarray without any
--- negative leading subsequence
+-- | Function to find subarray with the maximum sum from an array without any
+-- leading subsequence with a negative sum
 findMaxSumSubarray :: (Num a, Ord a) => [a] -> [a]
 findMaxSumSubarray [] = []
 findMaxSumSubarray [x] = [x]
